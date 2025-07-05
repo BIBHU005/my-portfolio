@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{title}}</title>
+</head>
+<body>
+    <!-- Floating orbs -->
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    
+    <div class="nav-container">
+        <table>
+            <tr>
+                <td><a href="{{url_for('home')}}"target="_blank">HOME</a></td>
+                <td><a href="{{url_for('about')}}" target="_blank">ABOUT</a></td>
+                <td><a href="{{url_for('project')}}" target="_blank">PROJECT</a></td>
+                <td><a href="{{url_for('contact')}}" target="_blank">CONTACT</a></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="main-content">
+        <h1>THIS IS {{title}} PAGE</h1>
+        
+        <div class="content-block">
+            {% block content %}
+            <p style="color: #94a3b8; font-size: 1.1rem; line-height: 1.6;">
+                Welcome to this beautifully designed dark blue themed page. The content will be displayed here when you extend this template.
+            </p>
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
